@@ -9,8 +9,6 @@
 </head>
 <body>
 
-<%@ include file="WEB-INF/lib/navbar.jsp"  %>
-
 <h1>Olá, mundo!</h1>
 
 </body>
