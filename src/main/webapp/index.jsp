@@ -4,8 +4,12 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
+<<<<<<< HEAD
 
 <title>T2S - Inicio</title>
+=======
+<title>Insert title here</title>
+>>>>>>> parent of ec28d6e (connecting to db)
 </head>
 <body>
 
