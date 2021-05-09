@@ -6,7 +6,7 @@
    
 <% 
 
-		String jdbcURL = "jdbc:postgresql://localhost:5432/T2S";
+		String jdbcURL = "jdbc:postgresql://172.31.41.82:5432/T2S";
 		String username = "postgres";
 		String password = "postgres";
 		
