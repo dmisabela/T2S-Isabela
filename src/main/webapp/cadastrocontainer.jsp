@@ -3,6 +3,7 @@
         
         <%@ include file="WEB-INF/lib/navbar.jsp"  %>
         
+        
     <!DOCTYPE html>
     <html>
     <head>
@@ -10,6 +11,8 @@
     <title>Cadastro de Container</title>
     </head>
     <body>
+    
+   
                <a><b>Cadastro de Containers</b></a>
     </body>
     </html>

@@ -2,11 +2,12 @@
     pageEncoding="ISO-8859-1"%>
     
     <%@ include file="WEB-INF/lib/navbar.jsp"  %>
-   <%@page import="java.sql.*"%>   
+   <%@page import="java.sql.*"%>  
+       
       
 <% 
 		String jdbcURL = "jdbc:postgresql://172.31.41.82:5432/T2S";
-		//String jdbcURL = "jdbc:postgresql://localhost:5432/T2S";
+		//String jdbcURL = "jdbc:postgresql://localhost:5432/T2S";   
 		String user = "postgres";
 		String pwd = "postgres";
 		
@@ -46,7 +47,7 @@
                     <div class="card-header">Login</div>
                     <div class="card-body">
                     
-                        <form action="cadastrocontainer.jsp" method="post">
+                        <form action="checklogin.jsp" method="post">
                             <div class="form-group row">
                                 <label for="username" class="col-md-4 col-form-label text-md-right">E-mail</label>
                                 <div class="col-md-6">
@@ -75,6 +76,8 @@
     </div>
 
 </main>
+
+
 
 </body>
 </html>
