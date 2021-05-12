@@ -5,13 +5,13 @@
    <%@page import="java.sql.*"%>
    
 <% 
-
+		//String jdbcURL = "jdbc:postgresql://localhost:5432/T2S";
 		String jdbcURL = "jdbc:postgresql://172.31.41.82:5432/T2S";
-		String username = "postgres";
-		String password = "postgres";
+		String user = "postgres";
+		String pwd = "postgres";
 		
 		try {
-			Connection connection = DriverManager.getConnection(jdbcURL, username, password);
+			Connection connection = DriverManager.getConnection(jdbcURL, user, pwd);
 			out.println("Connected to database" + "<br/>");
 			
 			String sql = "SELECT * FROM container";
@@ -37,8 +37,8 @@
 			connection.close();
 			
 		} catch (SQLException e) {
-			out.println("Error in connectiong to database");
-			// TODO Auto-generated catch block
+			out.println("Error in connecting to database");
+			
 			e.printStackTrace();
 		}
 				

@@ -10,8 +10,12 @@
  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+ <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+ <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,600" rel="stylesheet" type="text/css">
+ <link rel="icon" href="Favicon.png">
+ <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
 
-<title>T2S - Inicio</title>
+
 </head>
 <body>
 
@@ -40,10 +44,10 @@
       </div>
     </li>
     <li class="nav-item">
-      <a class="nav-link" href="#">Login</a>
+      <a class="nav-link" href="login.jsp">Login</a> 
     </li>
     <li class="nav-item">
-      <a class="nav-link" href="#">Cadastre-se</a>
+      <a class="nav-link" href="register.jsp">Cadastre-se</a>
     </li>
   </ul>
 </nav>
