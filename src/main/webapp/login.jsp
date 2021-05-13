@@ -3,11 +3,12 @@
     
     <%@ include file="WEB-INF/lib/navbar.jsp"  %>
    <%@page import="java.sql.*"%>  
+   <%@page import="login.User"%>
        
       
 <% 
 		String jdbcURL = "jdbc:postgresql://172.31.41.82:5432/T2S";
-		//String jdbcURL = "jdbc:postgresql://localhost:5432/T2S";   
+		//String jdbcURL = "jdbc:postgresql://localhost:5432/T2S"; 
 		String user = "postgres";
 		String pwd = "postgres";
 		
@@ -64,6 +65,7 @@
 
                             <div class="col-md-6 offset-md-4">
                                 <input type="submit" value="Entrar">
+                                                                
                                 <a href="register.jsp" class="btn btn-link">
                                     Cadastre-se
                                 </a>
