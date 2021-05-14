@@ -1,4 +1,4 @@
-    package com.javatpoint.dao;  
+package com.javatpoint.dao;  
     
     import java.sql.*;  
     import java.util.ArrayList;  
@@ -57,7 +57,7 @@
         int status=0;  
         try{  
             Connection con=getConnection();  
-            PreparedStatement ps=con.prepareStatement("delete from register where id=?");  
+            PreparedStatement ps=con.prepareStatement("delete from container where id=?");  
             ps.setInt(1,u.getId_container());  
             status=ps.executeUpdate();  
         }catch(Exception e){System.out.println(e);}  
@@ -88,7 +88,7 @@
         Containers u=null;  
         try{  
             Connection con=getConnection();  
-            PreparedStatement ps=con.prepareStatement("select * from containers where id_container=?");  
+            PreparedStatement ps=con.prepareStatement("select * from container where id_container=?");  
             ps.setInt(1,id_container);  
             ResultSet rs=ps.executeQuery();  
             while(rs.next()){  

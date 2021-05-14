@@ -13,9 +13,7 @@
 <head>
   
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	
-   
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">   
 
     <title>T2S - Login</title>
 </head>
@@ -85,11 +83,11 @@ String passwordi = request.getParameter("password");
 			 
 			else { %>
 			
-			<div class="alert alert-danger">
-			
-			<% 
-				out.println ("Login ou senha incorretos");		
-			} %>
+			 <div class="alert alert-danger" role="alert">
+				<p>
+			     <%
+ 					out.println("Usuário ou senha incorretos.");
+ 				} %>
 				
 		</div>	
 			<%
@@ -97,8 +95,8 @@ String passwordi = request.getParameter("password");
 			}
 			} catch (SQLException e) {
 				out.println("Error in connecting to database");
-				// TODO Auto-generated catch block
-				e.printStackTrace(new java.io.PrintWriter(out));
+			
+				e.printStackTrace();
 				}
 			%>
 
