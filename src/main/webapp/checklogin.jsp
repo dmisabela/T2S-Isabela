@@ -1,8 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-    <%@page import="login.User"%>
+   
     
-        <%@ include file="WEB-INF/lib/navbar.jsp"  %>
+        <%@ include file="WEB-INF/lib/navbar.jspf"  %>
+        <%@ include file="WEB-INF/lib/jdbc.jspf"  %>
+        <%@ include file="WEB-INF/lib/usersession.jspf"  %>
+        
 <!DOCTYPE html>
 <html>
 <head>
@@ -11,22 +14,15 @@
 </head>
 <body>
 
- <% User us = new User ();
-String username = request.getParameter("username");
-String password = request.getParameter("password");
-boolean status = us.verificarUsuario(username,password);
+<% 
+if (session.getAttribute("usersession.username") != null) {
+%>
 
-if(us.result==true){
-	out.println("Login feito com sucesso " + us.first_name);
-	
-	
-	} %> <a href="cadastrocontainer.jsp">Cadastrar Container</a>
-	
-	<% if (us.result==false){
-	out.println("Login ou senha inválidos");
-}
+<h1>Usuário logado!</h1>
 
-%> <a href="login.jsp">Voltar</a>
+
+
+<% }%>
 
 </body>
 </html>

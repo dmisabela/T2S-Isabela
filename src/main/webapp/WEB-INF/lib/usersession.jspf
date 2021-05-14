@@ -1,0 +1,14 @@
+<%
+if (request.getParameter("usersession.login") != null) {
+	if (!request.getParameter("usersession.username").isEmpty()) {
+		String username = request.getParameter("usersession.username");
+		session.setAttribute("usersession.username", username);
+		response.sendRedirect(request.getRequestURI());
+	} else {
+		out.println("Informe o usuário");
+	}
+} else if (request.getParameter("usersession.logout") != null) {
+	session.removeAttribute("usersession.username");
+	response.sendRedirect("./index.jsp");
+}
+%>

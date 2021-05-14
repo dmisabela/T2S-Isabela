@@ -1,15 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
     
-    <%@ include file="WEB-INF/lib/navbar.jsp"  %>
+    <%@ include file="WEB-INF/lib/navbar.jspf"  %>
+    <%@ include file="WEB-INF/lib/jdbc.jspf"  %>
    <%@page import="java.sql.*"%>
    
-<% 
-		//String jdbcURL = "jdbc:postgresql://localhost:5432/T2S";
-		String jdbcURL = "jdbc:postgresql://172.31.41.82:5432/T2S"; 
-		String user = "postgres";
-		String pwd = "postgres";
-		
+   
+<% 		
 		try {
 			Connection connection = DriverManager.getConnection(jdbcURL, user, pwd);
 			out.println("Connected to database" + "<br/>");
@@ -23,15 +20,15 @@
 			out.println("Containers" + "<br/>");
 			
 			while (result.next()) {
-				int id = result.getInt("id_container");
-				String nomeCliente = result.getString("nome_cliente");
-				String numContainer = result.getString ("num_container");
-				int tipo = result.getInt("tipo_container");
-				String status = result.getString("status_container");
-				String categoria = result.getString("categ_container");
+				int id_container = result.getInt("id_container");
+				String nome_cliente = result.getString("nome_cliente");
+				String num_container = result.getString ("num_container");
+				String tipo_container = result.getString("tipo_container");
+				String status_container = result.getString("status_container");
+				String categ_container = result.getString("categ_container");
 				
 							
-				out.println(id + " " + nomeCliente + " " + numContainer + " " + tipo + " " + status + " " + categoria + "<br/>");
+				out.println(id_container + " " + nome_cliente + " " + num_container + " " + tipo_container + " " + status_container + " " + categ_container + "<br/>");
 			}
 			
 			connection.close();

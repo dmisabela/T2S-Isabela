@@ -1,7 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
         pageEncoding="ISO-8859-1"%>
-        <%@ include file="WEB-INF/lib/navbar.jsp"  %>
-         <%@page import="java.sql.*"%>
+        <%@ include file="WEB-INF/lib/navbar.jspf"  %>
+        <%@ include file="WEB-INF/lib/jdbc.jspf"  %>
+        <%@include file="WEB-INF/lib/usersession.jspf"%>
+        <%@page import="java.sql.*"%>
          
     <!DOCTYPE html>
     <html>
@@ -9,31 +11,21 @@
     <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
     <title>Cadastre-se</title>
     </head>
-    <body>
+    <% 
     
-   
-
-<% 
-		String jdbcURL = "jdbc:postgresql://172.31.41.82:5432/T2S";
-        //String jdbcURL = "jdbc:postgresql://localhost:5432/T2S";
-        String user = "postgres";
-        String pwd = "postgres";
-        
-        try {
-            Connection connection = DriverManager.getConnection(jdbcURL, user, pwd);
-            out.println("Connected to database");
-            
-            connection.close();
-            
-        } catch (SQLException e) {
-            out.println("Error in connecting to database");
-            // TODO Auto-generated catch block
-            e.printStackTrace();
-        }
+String first_namec = request.getParameter("first_name");
+String last_namec = request.getParameter("last_name");
+String usernamec = request.getParameter("username");
+String passwordc = request.getParameter("password");
                 
 %>
+    <body>
     
-    
+       <% try {
+			Connection connection = DriverManager.getConnection(jdbcURL, user, pwd);
+			out.println("Connected to database"); %>
+
+
     <h1>Cadastre-se</h1>
     <main class="login-form">
     <div class="container">
@@ -43,7 +35,7 @@
                     <div class="card-header">Cadastre-se</div>
                     <div class="card-body">
                     
-                        <form action="login.jsp" method="post">
+                        <form method="get">
                             <div class="form-group row">
                                 <label for="first_name" class="col-md-4 col-form-label text-md-right">Nome</label>
                                 <div class="col-md-6">
@@ -59,7 +51,7 @@
                             </div>
                             
                             <div class="form-group row">
-                                <label for="username" class="col-md-4 col-form-label text-md-right">Usuário</label>
+                                <label for="username" class="col-md-4 col-form-label text-md-right">E-mail</label>
                                 <div class="col-md-6">
                                     <input type="text" id="username" class="form-control" name="username" required autofocus>
                                 </div>
@@ -82,7 +74,38 @@
         </div>
     </div>
     </div>
-
 </main>
+
+<% if (first_namec != null) {
+			String sql= "INSERT INTO usuarios (first_name, last_name, username, password) VALUES (?, ?, ?, ?)";
+			
+			PreparedStatement statement = connection.prepareStatement(sql);
+			
+			statement.setString(1, first_namec);
+			statement.setString(2, last_namec);
+			statement.setString(3, usernamec);
+			statement.setString(4, passwordc);
+			
+			
+int rows = statement.executeUpdate(); %>
+
+	<br>
+	<div class="alert alert-success" role="alert">
+		<% 
+			if (rows > 0) {
+				out.println("Sucesso! Cadastro efetuado. Faça login!");
+			}
+			%>
+	</div>
+
+	<%
+			connection.close();} 
+				} catch (SQLException e) {
+					out.println("Error in connecting to database");
+					
+					e.printStackTrace(new java.io.PrintWriter(out));
+				}		
+			%>
+
     </body>
     </html>
