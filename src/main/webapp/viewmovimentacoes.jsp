@@ -27,13 +27,13 @@
       
     <table border="1">  
     <tr><th>Id</th>
-    <th>Nome do Cliente</th>
-    <th>Número do Container</th>
-    <th>Tipo</th>  
-    <th>Status</th>
-    <th>Categoria</th>
+    <th>Tipo</th>
+    <th>Data início</th>
+    <th>Data Fim</th>  
+    <th>Numero</th>
     <th>Editar</th>
-    <th>Deletar</th></tr>  
+    <th>Deletar</th>
+ 
     
        <%
 				Connection connection = DriverManager.getConnection(jdbcURL, user, pwd);
