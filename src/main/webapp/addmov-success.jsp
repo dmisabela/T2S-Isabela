@@ -2,11 +2,12 @@
     <html>  
     <head>  
     <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">  
-    <title>Add Container Form</title>  
+    <title>Cadastro</title>  
     </head>  
     <body>  
       
-    <jsp:include page="cadastrocontainer.jsp"></jsp:include>  
+    <p>Movimentação cadastrada com sucesso!</p>  
+    <jsp:include page="cadastromovimentacoes.jsp"></jsp:include>  
       
     </body>  
     </html>  

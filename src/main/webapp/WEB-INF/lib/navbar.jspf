@@ -40,6 +40,8 @@
       <div class="dropdown-menu">
         <a class="dropdown-item" href="cadastrocontainer.jsp">Cadastro de Container</a>
         <a class="dropdown-item" href="viewcontainers.jsp">Lista de Containers</a>
+        <a class="dropdown-item" href="cadastromovimentacoes.jsp">Cadastro de Movimentações</a>
+        <a class="dropdown-item" href="viewmovimentacoes.jsp">Lista de Movimentações</a>
       </div>
     </li>
     <li class="nav-item">

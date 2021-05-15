@@ -57,7 +57,7 @@ package com.javatpoint.dao;
         int status=0;  
         try{  
             Connection con=getConnection();  
-            PreparedStatement ps=con.prepareStatement("delete from container where id=?");  
+            PreparedStatement ps=con.prepareStatement("delete from container where id_container=?");  
             ps.setInt(1,u.getId_container());  
             status=ps.executeUpdate();  
         }catch(Exception e){System.out.println(e);}  

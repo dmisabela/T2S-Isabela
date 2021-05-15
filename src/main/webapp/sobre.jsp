@@ -58,7 +58,12 @@
     <tr>
     <td>1.7</td>
       <td>CRUD - Containers</td>
-      <td>Criação do CRUD de containers, permitindo inserir, deletar e editar</td>
+      <td>Criação do CRUD de containers, permitindo inserir, deletar e editar (em andamento)</td>
+    </tr>
+    <tr>
+    <td>1.8</td>
+      <td>CRUD - Movimentações</td>
+      <td>Criação do CRUD de movimentações, permitindo inserir, deletar e editar (em andamento)</td>
     </tr>
   </table>
 </div>

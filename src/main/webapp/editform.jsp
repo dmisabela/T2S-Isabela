@@ -2,8 +2,7 @@
     pageEncoding="ISO-8859-1"%> 
     <!DOCTYPE html>  
     <html>  
-    <head>  
-    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">  
+    <head> 
     
     <%@ include file="WEB-INF/lib/navbar.jspf"  %>
     <%@ include file="WEB-INF/lib/usersession.jspf"  %> 
@@ -90,7 +89,7 @@
     </table>  
     </form>  
     
-    <a href="./listar-conteineres.jsp">
+    <a href="viewcontainers.jsp">
 			<button type="button" class="btn btn-outline-info">Voltar</button></a> <br> <br> <br>
 
 <%} connection.close (); } %>

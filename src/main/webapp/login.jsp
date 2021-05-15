@@ -29,7 +29,7 @@ String passwordi = request.getParameter("password");
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="card">
-                    <div class="card-header">Login</div>
+                    <div class="card-header">Login (login-exemplo: user@admin.com / admin) </div>
                     <div class="card-body">
                     
                         <form method="post">
@@ -54,6 +54,7 @@ String passwordi = request.getParameter("password");
                                     Cadastre-se
                                 </a>
                            </div>
+                   
                   </form>
                 </div>
             </div>
