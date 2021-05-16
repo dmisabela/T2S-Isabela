@@ -4,8 +4,10 @@
     <html>  
     <head> 
     
+    <%@page import="java.sql.*"%>
     <%@ include file="WEB-INF/lib/navbar.jspf"  %>
     <%@ include file="WEB-INF/lib/usersession.jspf"  %> 
+	<%@ include file="WEB-INF/lib/jdbc.jspf"  %> 
     <title>Editar containers</title>  
     </head>  
     <body>  
@@ -14,23 +16,19 @@
 		if (session.getAttribute("usersession.username") == null) {
 		%>
 		<h2>Faça login antes de visualizar!</h2>
-		<% } else { %>
-		<%@page import="java.sql.*"%>
-		<%@ include file="WEB-INF/lib/jdbc.jspf"  %> 
-    	
-			<%
+		<% } else { 
 			String editar = request.getParameter("editarvalue");
 			int id = 0;
 			if (editar != null) {
 			id = (Integer.parseInt(request.getParameter("editarvalue")));
 		
-	}; 		
-		String idcont = request.getParameter("id_container");
-		String nomecont = request.getParameter("nome_cliente");
-		String numcont = request.getParameter("num_container");
-		String tipocont = request.getParameter("tipo_container");
-		String statuscont = request.getParameter("status_container");
-		String categcont = request.getParameter("categoria_container");
+	}; 	
+		String idcont = request.getParameter("id_cont");
+		String cliente = request.getParameter("nome");
+		String container = request.getParameter("numero");
+		String tipo = request.getParameter("tipocont");
+		String status = request.getParameter("statuscont");
+		String categoria = request.getParameter("categoriacont");
 		%>
 		
 		<div class="container">
@@ -44,9 +42,9 @@
 			String id_cont = result.getString("id_container");
 			String nome = result.getString("nome_cliente");
 			String numero = result.getString("num_container");
-			String tipo = result.getString("tipo_container");
-			String status = result.getString("status_container");
-			String categoria = result.getString("categ_container");
+			String tipocont = result.getString("tipo_container");
+			String statuscont = result.getString("status_container");
+			String categoriacont = result.getString("categ_container");
 		 %>
 		
       
@@ -63,7 +61,7 @@
     
      <tr><td>Tipo do Container</td><td>
     <select name="tipo_container">
-    <option	selected><%=tipo%></option>
+    <option	selected><%=tipocont%></option>
     <option value="20">20</option>
     <option value="40">40</option>
     
@@ -71,7 +69,7 @@
     
     <tr><td>Status:</td><td>  
     <select name="status_container">
-    <option	selected><%=status%></option>
+    <option	selected><%=statuscont%></option>
     <option value="vazio">Vazio</option>
     <option value="cheio">Cheio</option>
     
@@ -79,7 +77,7 @@
     
     <tr><td>Categoria</td><td>  
     <select name="categ_container">
-    <option	selected><%=categoria%></option>
+    <option	selected><%=categoriacont%></option>
     <option value="Importacao">Importação</option>
     <option value="Exportacao">Exportação</option>
     
@@ -94,15 +92,15 @@
 
 <%} connection.close (); } %>
 
-<% if (numcont != null) {
+<% if (tipo != null) {
 		Connection connection = DriverManager.getConnection(jdbcURL, user, pwd);
 		String sql2= "UPDATE container SET nome_cliente = ?, num_container = ?, tipo_container = ?, status_container = ?, categ_container = ? WHERE id_container =" + idcont +  "";
 		PreparedStatement statement = connection.prepareStatement(sql2);
-		statement.setString(1, nomecont);
-		statement.setString(2, numcont);
-		statement.setString(3, tipocont);
-		statement.setString(4, statuscont); 
-		statement.setString(5, categcont);
+		statement.setString(1, cliente);
+		statement.setString(2, container);
+		statement.setString(3, tipo);
+		statement.setString(4, status); 
+		statement.setString(5, categoria);
 		
 		int rows = statement.executeUpdate();
 		if (rows > 0) { %>

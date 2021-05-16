@@ -20,11 +20,10 @@
 		<h2>Faça login antes de visualizar!</h2>
 		<%
 		} else {
-			String id = request.getParameter("id_movimentacao");
 			String tipo = request.getParameter("tipo_movimentacao");
-			String dataini = request.getParameter("data_inicio");
-			String datafim = request.getParameter("data_fim");
-			String nummov = request.getParameter("numero_container");
+			String dataini = request.getParameter("dataini");
+			String datafim = request.getParameter("datafim");
+			String nummov = request.getParameter("nummov");
 			
 		%>
    
@@ -40,6 +39,11 @@
     
     <option value="Embarque">Embarque</option>
     <option value="Desembarque">Desembarque</option>
+    <option value="Gate In">Gate In</option>
+    <option value="Gate Out">Gate Out</option>
+    <option value="Posicionamento Pilha">Posicionamento Pilha</option>
+    <option value="Pesagem">Pesagem</option>
+    <option value="Scanner">Scanner</option>
      </select></td></tr>
      
     <tr><td>Data e hora de início (AAAA-MM-DD 00:00:00)</td><td>  

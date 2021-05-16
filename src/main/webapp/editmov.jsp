@@ -58,6 +58,11 @@
     <option	selected><%=tipo_mov%></option>    
     <option value="Embarque">Embarque</option>
     <option value="Desembarque">Desembarque</option>
+    <option value="Gate In">Gate In</option>
+    <option value="Gate Out">Gate Out</option>
+    <option value="Posicionamento Pilha">Posicionamento Pilha</option>
+    <option value="Pesagem">Pesagem</option>
+    <option value="Scanner">Scanner</option>
      </select ></td></tr>
      
     <tr><td>Data e hora de início (AAAA-MM-DD 00:00:00)</td><td>  
