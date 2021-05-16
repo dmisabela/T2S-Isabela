@@ -8,7 +8,7 @@
     <%@ include file="WEB-INF/lib/jdbc.jspf"  %> 
     <%@ include file="WEB-INF/lib/usersession.jspf"  %> 
     
-    <title>Listar containers</title>  
+    <title>Listar Movimentações</title>  
     </head>  
     <body>  
     
@@ -21,7 +21,7 @@
 		} else {
 		%>
 
-    <h1>Lista de Containers</h1>  
+    <h1>Lista de Movimentações</h1>  
       
       <div>
       
@@ -56,8 +56,8 @@
 					<td><%=datafim%></td>
 					<td><%=numcont%></td>
 					 
-			<td><form action="editmov.jsp" method="post">
-							<button type="submit" value="<%=idmov%>" name="idValue"
+			<td><form action="#" method="post">
+							<button type="submit" value="<%=idmov%>" name="editarvalue"
 								class="btn btn-warning">Editar</button>
 						</form></td>
 
